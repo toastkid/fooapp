@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <%= yield :instance_vars %>
+  
+  <head>
+    <title><%= @title || "Fooapp" %></title>
+    <%= stylesheet_link_tag :all %>
+    <%= yield :stylesheet_includes %>    
+    
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield :javascript_includes %>
+  </head>
+  
+  <body class="<%= @body_class %>">
+    <div id="page">
+      <div id="content">
+        <div id="header">
+          <%= link_to "Fooapp Home", "/" %>
+          <%= yield :head %>
+        </div>
+        
+        <div id="main">
+          <%= yield :main %>
+        </div>
+        
+        <div id="footer">
+          <%= yield :footer %>
+          <%= yield :scripts %>          
+        </div>        
+      </div>
+      
+    </div>
+  </body>
+  
+</html>

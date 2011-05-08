@@ -1,0 +1,25 @@
+<% content_for :head do %>
+  <h1>Twitter stuff</h1>
+<% end %>
+
+<% content_for :main do %>
+  <div id="twitter-feed">
+    <div id="toastkidtest">
+      <h2>Feed 1: Tweets from toastkidtest</h2>
+      
+      <%= render :partial => "twitter/tweets", :object => Twitter.home_timeline[0..4] %>
+      
+      <div id="tweetform">
+        <% form_tag(twitter_update_path, :remote => true) do %>
+          <%= text_area_tag "tweet" %>
+          <%= submit_tag "Post" %>
+        <% end %>
+      </div>
+    </div>
+    <div id="bieber">
+      <h2>Feed 2: Marriage proposals to Justin Bieber on Twitter</h2>
+      <%= render :partial => "twitter/tweets", :object => Twitter::Search.new.containing("marry me").to("justinbieber").result_type("recent").per_page(20) %>            
+      </dl>
+    </div>
+  </div>
+<% end %>        

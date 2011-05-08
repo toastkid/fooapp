@@ -1,0 +1,5 @@
+#update_page do |page|
+  page.alert "posted"
+  page.replace "tweets", :partial => "twitter/tweets"
+#end
+

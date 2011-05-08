@@ -1,0 +1,6 @@
+    <div class="tweet">
+      <span class="tweeter"><%= tweet.from_user || tweet.user.name %></span>
+      <span class="time">(<%= time_ago_in_words(tweet.created_at.to_time) %> ago)</span>
+       - 
+      <span class="text"><%= tweet.text %></span>      
+    </div>

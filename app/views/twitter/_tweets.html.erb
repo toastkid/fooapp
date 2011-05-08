@@ -1,0 +1,6 @@
+<div id="tweets">
+  <%# .each copes with tweets being a Twitter::Search or an array of Hashie::Mash %>
+  <% tweets.each do |tweet| %>
+    <%= render :partial => "twitter/tweet", :object => tweet %>
+  <% end %>
+</div>
