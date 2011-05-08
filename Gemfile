@@ -14,7 +14,6 @@ gem 'twitter'
 gem 'jrails'
 gem 'gmaps4rails'
 
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
